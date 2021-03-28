@@ -22,6 +22,7 @@ Electrum server network runs ElectrumX.
 
 Documentation
 =============
+Fast setup `Setup <https://github.com/scalaris-project/electrumx/blob/master/docs/HowToSetup.rst>`_.
 
-See `readthedocs <https://electrumx-spesmilo.readthedocs.io/>`_.
+For more See `readthedocs <https://electrumx-spesmilo.readthedocs.io/>`_.
 
