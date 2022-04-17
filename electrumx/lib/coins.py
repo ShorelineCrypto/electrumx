@@ -3953,7 +3953,7 @@ class Nengcoin(Coin):
     XPUB_VERBYTES = bytes.fromhex("0488B21E")
     XPRV_VERBYTES = bytes.fromhex("0488ADE4")
     P2PKH_VERBYTE = bytes.fromhex("35")
-    P2SH_VERBYTES = (bytes.fromhex("5"),)
+    P2SH_VERBYTES = (bytes.fromhex("05"),)
     WIF_BYTE = bytes.fromhex("b0")
     GENESIS_HASH = ('14683bb988bcb69c74276df315c8de10'
                     '8d990fcff07483d5f2a044a3b4a592d8')
