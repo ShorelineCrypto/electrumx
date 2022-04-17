@@ -56,7 +56,7 @@ Config Example::
   COIN = Scalaris
   DB_DIRECTORY = /opt/electrumx/db
   DAEMON_URL = http://RPCUSER:RPCPASSWORD@IP:RPCPORT/
-  SERVICES = tcp://:10001,rpc://:8001,ssl://:10002
+  SERVICES = tcp://:10001,rpc://0.0.0.0:8001,ssl://:10002
   EVENT_LOOP_POLICY = uvloop
   PEER_DISCOVERY = self
   INITIAL_CONCURRENT = 50
