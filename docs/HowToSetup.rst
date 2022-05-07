@@ -51,9 +51,9 @@ Create and edit config::
 
   nano /opt/electrumx/electrumx.conf
 
-Config Example::
+Config Example for Nengcoin::
 
-  COIN = Scalaris
+  COIN = Nengcoin
   DB_DIRECTORY = /opt/electrumx/db
   DAEMON_URL = http://RPCUSER:RPCPASSWORD@IP:RPCPORT/
   SERVICES = tcp://:10001,rpc://0.0.0.0:8001,ssl://:10002
@@ -65,6 +65,23 @@ Config Example::
   BANDWIDTH_UNIT_COST = 10000
   SSL_CERTFILE = /opt/electrumx/ssl/server.crt
   SSL_KEYFILE = /opt/electrumx/ssl/server.key
+
+Config Example for Cheetahcoin::
+
+  COIN = Cheetahcoin
+  DB_DIRECTORY = /opt/electrumx/db
+  DAEMON_URL = http://RPCUSER:RPCPASSWORD@IP:RPCPORT/
+  SERVICES = tcp://:10007,rpc://0.0.0.0:8007,ssl://:10008
+  EVENT_LOOP_POLICY = uvloop
+  PEER_DISCOVERY = self
+  INITIAL_CONCURRENT = 50
+  COST_SOFT_LIMIT = 10000
+  COST_HARD_LIMIT = 100000
+  BANDWIDTH_UNIT_COST = 10000
+  SSL_CERTFILE = /opt/electrumx/ssl/server.crt
+  SSL_KEYFILE = /opt/electrumx/ssl/server.key
+
+
 
 Give access to config::
 
