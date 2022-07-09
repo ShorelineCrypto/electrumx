@@ -9,9 +9,11 @@ Prepare::
 
   apt-get install python3-setuptools python3-multidict python3.7 python3.7-dev libleveldb-dev python3-setuptools python3-multidict gcc g++ libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev build-essential python3-pip git
 
-  python3.7 -m pip install aiohttp pylru plyvel Cython uvloop quark_hash
+  python3.7 -m pip install aiohttp pylru Cython uvloop quark_hash
 
-  git clone https://github.com/scalaris-project/electrumx /opt/electrumx
+  python3.7 -m pip install   plyvel==1.3.0
+
+  git clone https://github.com/ShorelineCrypto/electrumx /opt/electrumx
 
   cd /opt/electrumx
 
@@ -54,7 +56,7 @@ Config Example::
   COIN = Scalaris
   DB_DIRECTORY = /opt/electrumx/db
   DAEMON_URL = http://RPCUSER:RPCPASSWORD@IP:RPCPORT/
-  SERVICES = tcp://:10001,rpc://:8001,ssl://:10002
+  SERVICES = tcp://:10001,rpc://0.0.0.0:8001,ssl://:10002
   EVENT_LOOP_POLICY = uvloop
   PEER_DISCOVERY = self
   INITIAL_CONCURRENT = 50
