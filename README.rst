@@ -23,6 +23,7 @@ Electrum server network runs ElectrumX.
 Documentation
 =============
 Fast setup `Setup <https://github.com/ShorelineCrypto/electrumx/blob/master/docs/HowToSetup.rst>`_.
+
 Generic setup method `Setup with docker <https://github.com/ShorelineCrypto/electrumx/blob/master/docs/HowToSetup_docker.md>`_.
 
 For more See `readthedocs <https://electrumx-spesmilo.readthedocs.io/>`_.
