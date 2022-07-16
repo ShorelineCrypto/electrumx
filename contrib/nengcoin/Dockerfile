@@ -36,7 +36,3 @@ WORKDIR  /opt/electrumx
 RUN python3.7 setup.py install
 CMD ["/usr/bin/python3.7", "/usr/local/bin/electrumx_server"]
 
-# build it with eg.: `docker build -t electrumx-neng .`
-# run it with eg.:
-# `docker run -d --net=host -v /opt/electrumx/db-NENG/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=ssl://electrum.shorelinecrypto.com:10002 electrumx`
-# for a proper clean shutdown, send TERM signal to the running container eg.: `docker kill --signal="TERM" CONTAINER_ID`

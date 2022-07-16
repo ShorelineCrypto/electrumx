@@ -11,7 +11,22 @@ Replace with your NENG full node rpc user/rpc password with below commands, assu
 
 ```
   docker run -d --net=host -v /opt/electrumx/db-NENG/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=ssl://electrum.shorelinecrypto.com:10002 electrumx-neng
+```
 
+## Trouble shoot or check docker container status
+
+Your docker run electrumx server job should be running, run below to obtain image / container ID
+
+```
+  docker ps
+  docker container ls -la
+  docker images -a
+```
+
+In order to trouble shoot issues or check log information of electrumx job, run blow to get real time log information 
+
+```
+  docker logs CONTAINER_ID
 ```
 
 ## Shut down electrum Nengcoin docker server
@@ -22,3 +37,10 @@ Replace with your NENG full node rpc user/rpc password with below commands, assu
 
 ```
 
+## clean up and remove residual containers
+
+Stopped containers take up disk and memory resources, you may want to clean up and remove those dead containers to free up resources
+
+```
+  docker rm CONTAINER_ID
+```
