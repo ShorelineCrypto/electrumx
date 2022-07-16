@@ -29,10 +29,12 @@ VOLUME /db
 VOLUME /ssl
 
 RUN mkdir -p "$DB_DIRECTORY" && ulimit -n 1048576
+RUN mkdir -p /ssl
 
+WORKDIR  /opt/electrumx
+
+RUN python3.7 setup.py install
 CMD ["/usr/bin/python3.7", "/usr/local/bin/electrumx_server"]
-RUN ln -sf /db  /opt/electrumx/db
-RUN ln -sf /ssl /opt/electrumx/ssl
 
 # build it with eg.: `docker build -t electrumx-neng .`
 # run it with eg.:
