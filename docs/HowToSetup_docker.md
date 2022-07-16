@@ -1,16 +1,21 @@
 # How to Set up Electrumx Server with Docker Method
 
-The fast simple method requires Ubuntu 18.04 server. This is as your linux server might run newer ubuntu or debian versions. When you need to run two coins (nengcoin and cheetahcoin)
-electrumx services in same server machine, the fast simple method is difficult to manage.
+The fast simple method requires Ubuntu 18.04 server. Your linux server might run newer ubuntu or debian versions or other linux distros. Also when you need to run two coins (nengcoin and cheetahcoin)
+electrumx services in same linux machine, the fast simple method is difficult to manage.
 
-Here is the a method that you can easily run docker jobs of 2 coins (nengcoin and cheetahcoin) in any gnu linux machines.
+Here is recommended method that you can easily run docker jobs of 2 coins (nengcoin and cheetahcoin) in any gnu linux machine.
 
 
 ## Run NENG or CHTA Full Node
 
-In the same electrum server, you will need to run nengcoin and/or cheetahcoin full node.  Download latest version of core wallet, set up proper
-rpc username/password and rpc port in the "nengcoin.conf" and/or "cheetahcoin.conf" in their proper wallet folder, run full node and
-sync the full node to latest block.
+In the same linux server, you will need to run nengcoin and/or cheetahcoin full node.  Download latest version of NENG or CHTA core wallet, set up proper
+rpc username/password and rpc port in the "nengcoin.conf" and/or "cheetahcoin.conf" in their proper wallet folder, make sure the conf file has one line below to insure your full node contain all transactions:
+
+```
+txindex=1
+```
+
+Run full node and sync the full node to latest block height.
 
 Copy down the rpcuser/rpcpassword/rpcport information, they will be used in below electrumx server configuration.
 

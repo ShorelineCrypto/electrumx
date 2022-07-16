@@ -7,10 +7,10 @@ Build docker image with:
 
 ## Run electrumx Nengcoin server with docker
 
-Replace with your NENG full node rpc user/rpc password with below commands, assuming the NENG full node runs at rpcport=8388 :
+Replace with your NENG full node rpcuser/rpcpassword and your server hostname with below command, assuming the NENG full node runs at rpcport=8388 :
 
 ```
-  docker run -d --net=host -v /opt/electrumx/db-NENG/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=ssl://electrum.shorelinecrypto.com:10002 electrumx-neng
+  docker run -d --net=host -v /opt/electrumx/db-NENG/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=ssl://yourhost:10002 electrumx-neng
 ```
 
 ## Trouble shoot or check docker container status
