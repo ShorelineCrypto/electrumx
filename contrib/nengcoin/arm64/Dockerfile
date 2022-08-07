@@ -5,6 +5,7 @@ WORKDIR /
 RUN apt-get update && \
         apt-get -y install python3-setuptools python3-multidict python3.7 python3.7-dev libleveldb-dev python3-setuptools python3-multidict gcc g++ libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev build-essential python3-pip git
 
+RUN python3.7 -m pip install --upgrade pip
 RUN python3.7 -m pip install aiohttp pylru Cython uvloop quark_hash
 RUN python3.7 -m pip install   plyvel==1.3.0
 RUN git clone https://github.com/ShorelineCrypto/electrumx /opt/electrumx
