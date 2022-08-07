@@ -1,14 +1,12 @@
-FROM debian:stretch-slim
+FROM ubuntu:18.04
 
 WORKDIR /
 
 RUN apt-get update && \
-        apt-get -y install ppython3-pip build-essential libc6-dev libncurses5-dev libncursesw5-dev
+        apt-get -y install python3-setuptools python3-multidict python3.7 python3.7-dev libleveldb-dev python3-setuptools python3-multidict gcc g++ libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev build-essential python3-pip git
 
-RUN apt -y install libreadline6-dev/stable libreadline6/stable
-RUN apt-get -y install libleveldb-dev git
-
-RUN pip3 install plyvel
+RUN python3.7 -m pip install aiohttp pylru Cython uvloop quark_hash
+RUN python3.7 -m pip install   plyvel==1.3.0
 RUN git clone https://github.com/ShorelineCrypto/electrumx /opt/electrumx
 
 ENV COIN=Nengcoin
@@ -35,6 +33,6 @@ RUN mkdir -p /ssl
 
 WORKDIR  /opt/electrumx
 
-RUN python3 setup.py install
-CMD ["/usr/bin/python3", "/usr/local/bin/electrumx_server"]
+RUN python3.7 setup.py install
+CMD ["/usr/bin/python3.7", "/usr/local/bin/electrumx_server"]
 
