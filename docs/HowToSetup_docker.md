@@ -3,7 +3,7 @@
 The fast simple method requires Ubuntu 18.04 server. Your linux server might run newer ubuntu or debian versions or other linux distros. Also when you need to run two coins (nengcoin and cheetahcoin)
 electrumx services in same linux machine, the fast simple method is difficult to manage.
 
-Here is recommended method that you can easily run docker jobs of 2 coins (nengcoin and cheetahcoin) in any gnu linux machine.
+Here is recommended method that you can easily run docker jobs of 2 coins (nengcoin and cheetahcoin) in any gnu linux server tested on x86_64 and arm64 hardware.
 
 
 ## Run NENG or CHTA Full Node
@@ -23,6 +23,7 @@ Copy down the rpcuser/rpcpassword/rpcport information, they will be used in belo
 
 Ran below:
 ```
+sudo git clone https://github.com/ShorelineCrypto/electrumx /opt/electrumx
 sudo mkdir -p /opt/electrumx/db-NENG
 sudo mkdir -p /opt/electrumx/db-CHTA
 ```
