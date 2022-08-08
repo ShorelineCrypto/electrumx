@@ -1,4 +1,4 @@
-## Install electrumx docker image for Nengcoin on x86_64 (amd64) GNU/linux: 
+## Install electrumx docker image for Nengcoin on arm64 (aarch64) GNU/linux: 
 Build docker image with:
 
 ```
