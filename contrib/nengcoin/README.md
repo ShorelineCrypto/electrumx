@@ -48,18 +48,27 @@ Stopped containers take up disk and memory resources, you may want to clean up a
 ## electrumx server crash maintenance
 
 Electrumx server tend to crash from time to time after running smoothly for several weeks.  Using docker logs CONTAINER_ID method can find 
-crash error like this: 
+crash error like this assuming your CONTAINER_ID is 'c39a7d4a07d7': 
 ```
+  docker ps -a
+  docker logs c39a7d4a07d7
+
 --- skipped logs informations ---
   struct.error: 'H' format requires 0 <= number <= 65535
 ```
 
-The ROOT CAUSE of the crash is due to database overflow and can be fixed with below steps:
+The ROOT CAUSE of the crash is due to database overflow and can be fixed with below steps  :
 
 #### (1) delete the exited docker container
-#### (2) setup DAEMON_URL with proper user/pass
 ```
-    export DAEMON_URL=YOUR_NENG_RPC_with_USER_PASS
+   docker ps -a
+   docker rm c39a7d4a07d7
+```
+
+#### (2) setup linux terminal with proper environment
+```
+    export COIN=Nengcoin
+    export DB_DIRECTORY=/opt/electrumx/db-NENG
 ```
 #### (3) run this in your electrumx folder  /opt/electrumx 
 
