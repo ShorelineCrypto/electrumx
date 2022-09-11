@@ -1,0 +1,77 @@
+## Install electrumx docker image for Cheetahcoin on x86_64 (amd64) or arm64 (aarch64) GNU/linux: 
+Build docker image with:
+
+```
+  docker build -t electrumx-chta .
+```
+
+## Run electrumx Cheetahcoin server with docker
+
+Replace with your CHTA full node rpcuser/rpcpassword and your server hostname with below command, assuming the CHTA full node runs at rpcport=8388 :
+
+```
+  docker run -d --net=host -v /opt/electrumx/db-CHTA/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=tcp://yourhost:10001,ssl://yourhost:10002 electrumx-chta
+```
+
+## Trouble shoot or check docker container status
+
+Your docker run electrumx server job should be running, run below to obtain image / container ID
+
+```
+  docker ps
+  docker container ls -la
+  docker images -a
+```
+
+In order to trouble shoot issues or check log information of electrumx job, run blow to get real time log information 
+
+```
+  docker logs CONTAINER_ID
+```
+
+## Shut down electrum Cheetahcoin docker server
+ for a proper clean shutdown, send TERM signal to the running container eg.: 
+
+```
+  docker kill --signal="TERM" CONTAINER_ID
+
+```
+
+## clean up and remove residual containers
+
+Stopped containers take up disk and memory resources, you may want to clean up and remove those dead containers to free up resources
+
+```
+  docker rm CONTAINER_ID
+```
+
+## electrumx server crash maintenance
+
+Electrumx server tend to crash from time to time after running smoothly for several weeks.  Using docker logs CONTAINER_ID method can find 
+crash error like this assuming your CONTAINER_ID is 'c39a7d4a07d7': 
+```
+  docker ps -a
+  docker logs c39a7d4a07d7
+
+--- skipped logs informations ---
+  struct.error: 'H' format requires 0 <= number <= 65535
+```
+
+The ROOT CAUSE of the crash is due to database overflow and can be fixed with below steps  :
+
+#### (1) delete the exited docker container
+```
+   docker ps -a
+   docker rm c39a7d4a07d7
+```
+
+#### (2) setup linux terminal with proper environment
+```
+    export COIN=Cheetahcoin
+    export DB_DIRECTORY=/opt/electrumx/db-CHTA
+```
+#### (3) run this in your electrumx folder  /opt/electrumx 
+
+```
+   python3.7 electrumx_compact_history
+```
