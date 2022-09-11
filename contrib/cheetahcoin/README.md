@@ -65,13 +65,22 @@ The ROOT CAUSE of the crash is due to database overflow and can be fixed with be
    docker rm c39a7d4a07d7
 ```
 
-#### (2) setup linux terminal with proper environment
+#### (2) setup "test" container to do maintenance job
 ```
-    export COIN=Cheetahcoin
-    export DB_DIRECTORY=/opt/electrumx/db-CHTA
+    docker run -it --name test  -v /opt/electrumx/db-CHTA/:/db   electrumx-chta  /bin/bash
 ```
-#### (3) run this in your electrumx folder  /opt/electrumx 
+
+This above command will enter docker container with root account.
+#### (3) do maintenance in "test" container
+
+Run below commands inside container root account in electrumx folder  /opt/electrumx
 
 ```
    python3.7 electrumx_compact_history
+   exit
 ```
+
+The above python3.7 command should take a few minutes to complete and then exit container
+
+
+#### (4) Delete the containers and re-start electrum-neng container job
