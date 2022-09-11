@@ -1,16 +1,16 @@
-## Install electrumx docker image for Nengcoin on x86_64 (amd64) or arm64 (aarch64) GNU/linux: 
+## Install electrumx docker image for Cheetahcoin on x86_64 (amd64) or arm64 (aarch64) GNU/linux: 
 Build docker image with:
 
 ```
-  docker build -t electrumx-neng .
+  docker build -t electrumx-chta .
 ```
 
-## Run electrumx Nengcoin server with docker
+## Run electrumx Cheetahcoin server with docker
 
-Replace with your NENG full node rpcuser/rpcpassword and your server hostname with below command, assuming the NENG full node runs at rpcport=8388 :
+Replace with your CHTA full node rpcuser/rpcpassword and your server hostname with below command, assuming the CHTA full node runs at rpcport=8546 :
 
 ```
-  docker run -d --net=host -v /opt/electrumx/db-NENG/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=tcp://yourhost:10001,ssl://yourhost:10002 electrumx-neng
+  docker run -d --net=host -v /opt/electrumx/db-CHTA/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8546" -e REPORT_SERVICES=tcp://yourhost:10007,ssl://yourhost:10008 electrumx-chta
 ```
 
 ## Trouble shoot or check docker container status
@@ -29,7 +29,7 @@ In order to trouble shoot issues or check log information of electrumx job, run 
   docker logs CONTAINER_ID
 ```
 
-## Shut down electrum Nengcoin docker server
+## Shut down electrum Cheetahcoin docker server
  for a proper clean shutdown, send TERM signal to the running container eg.: 
 
 ```
@@ -67,7 +67,7 @@ The ROOT CAUSE of the crash is due to database overflow and can be fixed with be
 
 #### (2) setup "test" container to do maintenance job
 ```
-    docker run -it --name test  -v /opt/electrumx/db-NENG/:/db   electrumx-neng  /bin/bash
+    docker run -it --name test  -v /opt/electrumx/db-CHTA/:/db   electrumx-chta  /bin/bash
 ```
 
 This above command will enter docker container with root account.
