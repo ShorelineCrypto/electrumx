@@ -64,7 +64,8 @@ Check out online guide if your linux is openSUSE, fedora or arch based.
 For Nengcoin,  checkout 'contrib/nengcoin' of this repos README guide, follow the guide step by step to install docker image, run a docker-run job, and trouble shoot
 job log information or other maintanence tasks if needed.
 
-For Cheetahcoin, checkout 'contrib/cheetahcoin' (pending).
+For Cheetahcoin, checkout 'contrib/cheetahcoin' of this repos README guide, follow the guide step by step to install docker image, run a docker-run job, and trouble shoot
+job log information or other maintanence tasks if needed.
 
 Your can run 2 coins with docker jobs together in the same linux server. 
 

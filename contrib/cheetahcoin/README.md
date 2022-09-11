@@ -7,10 +7,10 @@ Build docker image with:
 
 ## Run electrumx Cheetahcoin server with docker
 
-Replace with your CHTA full node rpcuser/rpcpassword and your server hostname with below command, assuming the CHTA full node runs at rpcport=8388 :
+Replace with your CHTA full node rpcuser/rpcpassword and your server hostname with below command, assuming the CHTA full node runs at rpcport=8546 :
 
 ```
-  docker run -d --net=host -v /opt/electrumx/db-CHTA/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=tcp://yourhost:10001,ssl://yourhost:10002 electrumx-chta
+  docker run -d --net=host -v /opt/electrumx/db-CHTA/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8546" -e REPORT_SERVICES=tcp://yourhost:10007,ssl://yourhost:10008 electrumx-chta
 ```
 
 ## Trouble shoot or check docker container status
