@@ -83,4 +83,9 @@ Run below commands inside container root account in electrumx folder  /opt/elect
 The above python3.7 command should take a few minutes to complete and then exit container
 
 
-#### (4) Delete the containers and re-start electrum-neng container job
+#### (4) Delete the containers and re-start electrumx-neng container job
+```
+   docker rm test
+```
+   go back to command step above under "Run electrumx Nengcoin server with docker"
+
