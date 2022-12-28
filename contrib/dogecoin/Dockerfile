@@ -13,7 +13,7 @@ RUN git clone https://github.com/ShorelineCrypto/electrumx /opt/electrumx
 ENV COIN=Dogecoin
 ENV DB_DIRECTORY=/db
 ENV DAEMON_URL="http://RPCUSER:RPCPASSWORD@IP:RPCPORT/"
-ENV SERVICES="tcp://:10060,rpc://0.0.0.0:8001,ssl://:20060"
+ENV SERVICES="tcp://:10060,rpc://0.0.0.0:8017,ssl://:20060"
 ENV EVENT_LOOP_POLICY=uvloop
 ENV PEER_DISCOVERY=self
 ENV INITIAL_CONCURRENT=50
