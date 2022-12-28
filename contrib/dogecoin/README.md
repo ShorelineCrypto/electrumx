@@ -7,10 +7,10 @@ Build docker image with:
 
 ## Run electrumx Dogecoin server with docker
 
-Replace with your DOGE full node rpcuser/rpcpassword and your server hostname with below command, assuming the DOGE full node runs at rpcport=8388 :
+Replace with your DOGE full node rpcuser/rpcpassword and your server hostname with below command, assuming the DOGE full node runs at rpcport=22555 :
 
 ```
-  docker run -d --net=host -v /opt/electrumx/db-DOGE/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:8388" -e REPORT_SERVICES=tcp://yourhost:10001,ssl://yourhost:10002 electrumx-doge
+  docker run -d --net=host -v /opt/electrumx/db-DOGE/:/db -v /opt/electrumx/ssl:/ssl -e DAEMON_URL="http://youruser:yourpass@127.0.0.1:22555" -e REPORT_SERVICES=tcp://yourhost:10060,ssl://yourhost:20060 electrumx-doge
 ```
 
 ## Trouble shoot or check docker container status
